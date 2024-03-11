@@ -1,4 +1,4 @@
-# Nairobi_Air_Watch
+.# Nairobi_Air_Watch
 The project will focus on air quality data from Nairobi, Lagos, and Dar es Salaam and thereafter build a time seriesmodel to predict PM 2.5 readings throughout the day. 
 The data set contains PM (particulate matter), temperature, and humidity readings taken with low-cost sensors. These sensors measure the concentration of PM in the air.
 
@@ -12,4 +12,16 @@ df["P2"].resample("1H").mean().head()
 #To fill in missing values with the last value
 df["P2"].resample("1H").mean().fillna(method="ffill").head()
 ![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/0cee9bf5-c66b-4a27-9a6f-0139915a791c)
+
+#To calculate the rolling average of data in a time series model
+df["P2"].rolling(168).mean()
+![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/2e91038b-e582-46cc-8b78-993fb7cf946e)
+
+In a plot:  
+fig, ax = plt.subplots(figsize=(15, 6))
+df["P2"].rolling(168).mean().plot(ax=ax, ylabel="PM2.5", title="Weekly rolling average"); ---semi-colon to surpress the text
+![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/0c377118-da14-4e04-9728-568b0b9fa6fc)
+
+**Explanations**
+
 
