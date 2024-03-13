@@ -1,10 +1,11 @@
-.# Nairobi_Air_Watch
+# Nairobi_Air_Watch
 The project will focus on air quality data from Nairobi, Lagos, and Dar es Salaam and thereafter build a time seriesmodel to predict PM 2.5 readings throughout the day. 
 The data set contains PM (particulate matter), temperature, and humidity readings taken with low-cost sensors. These sensors measure the concentration of PM in the air.
 
 
 
 **CODES**
+
 #To section the data to the intervals neeeeded to make the predictions for which we get the mean 
 df["P2"].resample("1H").mean().head() 
 
@@ -27,7 +28,7 @@ df["P2"].rolling(168).mean().plot(ax=ax, ylabel="PM2.5", title="Weekly rolling a
 
 ![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/0c377118-da14-4e04-9728-568b0b9fa6fc)
 
-**FE in a time series model**
+**Feature Engineering in a time series model**
 1. Create a lag by assigning a column with prev column values i.e using the readings from the previous hour to predict the present reading(t-1)
       Equation: Ytarget = β0 + β1 Yt-1(lag of 1)
 
@@ -36,7 +37,11 @@ df["P2.L1"] = df["P2"].shift(1)
 
 ![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/058593cc-10bb-4f9e-8f8c-723ad6b30e03)
 
+#correlation matrix
+
+
 **Explanations**
+
  P2 = target
  P2.L1 = feature
 
