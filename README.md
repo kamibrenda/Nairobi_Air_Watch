@@ -37,11 +37,18 @@ df["P2.L1"] = df["P2"].shift(1)
 
 ![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/058593cc-10bb-4f9e-8f8c-723ad6b30e03)
 
-#correlation matrix
+#Autocorrelation plot
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.scatter(x=df["P2.L1"], y=df["P2"])
+ax.plot([0, 120],[0, 120], linestyle="--", color="orange")
+plt.xlabel("P2.L1")
+plt.ylabel("P2")
+plt.title("PM2.5 Autocorrelation")
+
+![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/6b58f095-7a34-4fbb-b7f6-500cb4e21d92)
 
 
-**Explanations**
-
+**Train-Test Split for Time Series**
  P2 = target
  P2.L1 = feature
 
