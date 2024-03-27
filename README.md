@@ -52,3 +52,8 @@ plt.title("PM2.5 Autocorrelation")
  P2 = target
  P2.L1 = feature
 
+ Time only goes forward- Thus a cut off split is recommended to split the data to test and train
+ a line is put in moment in time within the analysis 
+      - before line training data
+      - after line testing data
+
