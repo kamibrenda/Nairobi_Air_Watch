@@ -52,8 +52,14 @@ plt.title("PM2.5 Autocorrelation")
  P2 = target
  P2.L1 = feature
 
- Time only goes forward- Thus a cut off split is recommended to split the data to test and train
+ Time only goes forward- Thus a cut off split is recommended to split the data for testing and training
  a line is put in moment in time within the analysis 
-      - before line training data
-      - after line testing data
+      - before line training data - 20% of the data above the line - row 2341
+      - after line testing data - 80% of the data below the line
+
+![image](https://github.com/kamibrenda/Nairobi_Air_Watch/assets/42267047/f386e7be-e166-4425-a2b2-6d32004f66f7)
+
+Thus the data has been split horizontally and vertically
+      Horizontal split- Feature (P2.L1) and Target matrix(P2)
+      Vertical split- Training (20% cutoff) and testing data(80% cutoff)
 
